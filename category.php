@@ -124,7 +124,26 @@ echo'
                                             <div class="filter-item">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="cat-1">
-                                                    <label class="custom-control-label" for="cat-1">Dresses</label>
+                                                    <label class="custom-control-label" for="cat-1">
+<?php
+
+$queryfilter = "SELECT DISTINCT(category) FROM product WHERE code = 'deal' or code = 'product' ORDER BY id DESC";
+$statement = $conn->prepare($queryfilter);
+$statement->execute();
+$result = $statement->fetchAll();
+foreach($result as $row) {
+  ?>
+  <div class="list-group-item checkbox">
+      <label><input type="checkbox" class="common_selector brand" value="<?php echo $row['category']; ?>"  > <?php echo $row['category']; ?></label>
+  </div>
+  <?php
+  }
+
+
+
+?>
+
+                                                    </label>
                                                 </div><!-- End .custom-checkbox -->
                                                 <span class="item-count">3</span>
                                             </div><!-- End .filter-item -->
