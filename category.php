@@ -8,57 +8,43 @@ include 'database.php';
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 
-?>
-<style>
-#loading
+$tab_query = "SELECT * FROM category ORDER BY category_id ASC";
+$tab_result = mysqli_query($conn, $tab_query);
+$tab_menu = '';
+$tab_content = '';
+$i = 0;
+while($row = mysqli_fetch_array($tab_result))
 {
- text-align:center; 
- background: url('loader.gif') no-repeat center; 
- height: 150px;
-}
-</style>
-        <main class="main">
-        	<div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
-        		<div class="container">
-        			<h1 class="page-title">PRODUCTS <span>SHOP</span></h1>
-        		</div><!-- End .container -->
-        	</div><!-- End .page-header -->
-            <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
-                <div class="container">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><a href="category.php">category</a></li>
-                    </ol>
-                </div><!-- End .container -->
-            </nav><!-- End .breadcrumb-nav -->
+ if($i == 0)
+ {
+  $tab_menu .= '
+   <li class="active"><a href="#'.$row["category_id"].'" data-toggle="tab">'.$row["category"].'</a></li>
+  ';
+  $tab_content .= '
+   <div id="'.$row["category_id"].'" class="tab-pane fade in active">
+  ';
+ }
+ else
+ {
+  $tab_menu .= '
+   <li><a href="#'.$row["category_id"].'" data-toggle="tab">'.$row["category"].'</a></li>
+  ';
+  $tab_content .= '
+   <div id="'.$row["category_id"].'" class="tab-pane fade">
+  ';
+ }
+ $product_query = "SELECT * FROM products WHERE category_id = '".$row["category"]."'";
+ $product_result = mysqli_query($conn, $product_query);
+ while($rowr = mysqli_fetch_array($product_result))
+ {
+  $id = $rowr['id'];
+  $productname = $rowr['productname'];
+  $price = $rowr['price'];
+  $discount = $rowr['discount'];
+  $location = $rowr['location'];
+    $category = $rowr['category'];
 
-            <div class="page-content">
-                <div class="container">
-        			<div class="toolbox">
-        				<div class="toolbox-left">
-                            <a href="#" class="sidebar-toggler"><i class="icon-bars"></i>Filters</a>
-        				</div><!-- End .toolbox-left -->
-
-        			</div><!-- End .toolbox -->
-
-                    <div class="products">
-                        <div class="row">
-
-                          <?php
-                      										$queryr = "SELECT * from products order by RAND() limit 50";
-                      										$resultr = mysqli_query($conn,$queryr);
-                      										$res = mysqli_num_rows($resultr);
-                      										if($res > 0){
-
-                      											while ($rowr  = mysqli_fetch_assoc($resultr)) {
-                      													$id = $rowr['id'];
-                      													$productname = $rowr['productname'];
-                      													$price = $rowr['price'];
-                      													$discount = $rowr['discount'];
-                      													$location = $rowr['location'];
-                                                	$category = $rowr['category'];
-
-echo'
+  $tab_content .= '
 <div class="col-6 col-md-4 col-lg-4 col-xl-3">
     <div class="product">
         <figure class="product-media">
@@ -91,15 +77,51 @@ echo'
     </div><!-- End .product -->
 </div><!-- End .col-sm-6 col-lg-4 col-xl-3 -->
 
-';
-
-
+  ';
+ }
+ $tab_content .= '<div style="clear:both"></div></div>';
+ $i++;
 }
+?>
+        <main class="main">
+        	<div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
+        		<div class="container">
+        			<h1 class="page-title">PRODUCTS <span>SHOP</span></h1>
+        		</div><!-- End .container -->
+        	</div><!-- End .page-header -->
+            <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
+                <div class="container">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="category.php">category</a></li>
+                    </ol>
+                </div><!-- End .container -->
+            </nav><!-- End .breadcrumb-nav -->
 
-}
+            <div class="page-content">
+                <div class="container">
+        			<div class="toolbox">
+        				<div class="toolbox-left">
+                            <a href="#" class="sidebar-toggler"><i class="icon-bars"></i>Filters</a>
+        				</div><!-- End .toolbox-left -->
 
-                                                ?>
+        			</div><!-- End .toolbox -->
 
+                    <div class="prouducts">
+                        <div class="row">
+
+                        <ul class="nav nav-tabs">
+   <?php
+   echo $tab_menu;
+   ?>
+   </ul>
+   <div class="tab-content">
+   <br />
+   <?php
+   echo $tab_content;
+   ?>
+   </div>
+  </div>
 
                         </div><!-- End .row -->
 
@@ -296,6 +318,9 @@ while ($row  = mysqli_fetch_assoc($results))
                             </div><!-- End .widget -->
                         </div><!-- End .sidebar-filter-wrapper -->
                     </aside><!-- End .sidebar-filter -->
+
+
+                    
                 </div><!-- End .container -->
             </div><!-- End .page-content -->
         </main><!-- End .main -->
