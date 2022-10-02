@@ -18,7 +18,14 @@ while($row = mysqli_fetch_array($tab_result))
  if($i == 0)
  {
   $tab_menu .= '
-   <li class="active"><a href="#'.$row["category_id"].'" data-toggle="tab">'.$row["category"].'</a></li>
+  <div class="btn-wrap active">
+
+  <a href="#'.$row["category_id"].'" data-toggle="tab" class="btn btn-outline-primary btn-round"
+    ><span>'.$row["category"].'</span
+    ><i class="icon-long-arrow-down"></i
+  ></a>
+</div>
+  
   ';
   $tab_content .= '
    <div id="'.$row["category_id"].'" class="tab-pane fade in active">
@@ -27,13 +34,22 @@ while($row = mysqli_fetch_array($tab_result))
  else
  {
   $tab_menu .= '
-   <li><a href="#'.$row["category_id"].'" data-toggle="tab">'.$row["category"].'</a></li>
+ 
+  
+   <li>
+   <div class="btn-wrap ">
+
+   <a href="#'.$row["category_id"].'" data-toggle="tab" class="btn btn-outline-primary btn-round"
+     ><span>'.$row["category"].'</span
+     ><i class="icon-long-arrow-down"></i
+   ></a>
+ </div></li>
   ';
   $tab_content .= '
    <div id="'.$row["category_id"].'" class="tab-pane fade">
   ';
  }
- $product_query = "SELECT * FROM products WHERE category_id = '".$row["category"]."'";
+ $product_query = "SELECT * FROM products WHERE category = '".$row["category"]."'";
  $product_result = mysqli_query($conn, $product_query);
  while($rowr = mysqli_fetch_array($product_result))
  {
@@ -83,6 +99,9 @@ while($row = mysqli_fetch_array($tab_result))
  $i++;
 }
 ?>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <main class="main">
         	<div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
         		<div class="container">
@@ -107,10 +126,13 @@ while($row = mysqli_fetch_array($tab_result))
 
         			</div><!-- End .toolbox -->
 
-                    <div class="prouducts">
+                    <div class="">
                         <div class="row">
 
                         <ul class="nav nav-tabs">
+     
+
+                        
    <?php
    echo $tab_menu;
    ?>
@@ -130,195 +152,8 @@ while($row = mysqli_fetch_array($tab_result))
                         </div><!-- End .load-more-container -->
                     </div><!-- End .products -->
 
-                    <div class="sidebar-filter-overlay"></div><!-- End .sidebar-filter-overlay -->
-                    <aside class="sidebar-shop sidebar-filter">
-                        <div class="sidebar-filter-wrapper">
-                            <div class="widget widget-clean">
-                                <label><i class="icon-close"></i>Filters</label>
-                                <a href="#" class="sidebar-filter-clear text-danger">FILTERS UNAVAILABLE</a>
-                            </div>
-                            <div class="widget widget-collapsible">
-                                <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-1" role="button" aria-expanded="true" aria-controls="widget-1">
-                                        Price
-                                    </a>
-                                </h3><!-- End .widget-title -->
-
-                                <div class="collapse show" id="widget-1">
-                                    <div class="widget-body">
-                                        <div class="filter-items filter-items-count">
-                                            <div class="filter-item">
-                                                <div class="custom-control custom-checkbox">
-                                                <input type="hidden" id="hidden_minimum_price" value="0" />
-                    <input type="hidden" id="hidden_maximum_price" value="5000000" />
-                    <p id="price_show">1000 - 5000000</p>
-                    <div id="price_range"></div>
-                                                </div><!-- End .custom-checkbox -->
-                                               
-                                            </div><!-- End .filter-item -->
-
-                                    </div><!-- End .widget-body -->
-                                </div><!-- End .collapse -->
-                            </div><!-- End .widget -->
-<!-- End .widget -->
-                            <div class="widget widget-collapsible">
-                                <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-1" role="button" aria-expanded="true" aria-controls="widget-1">
-                                        Category
-                                    </a>
-                                </h3><!-- End .widget-title -->
-
-                                <div class="collapse show" id="widget-1">
-                                    <div class="widget-body">
-                                        <div class="filter-items filter-items-count">
-                                            <div class="filter-item">
-                                                <div class="custom-control custom-checkbox">
-                                                   
-<?php
-$queryfilter = "SELECT DISTINCT(category) FROM products ORDER BY id DESC";
-
-$results = mysqli_query($conn,$queryfilter);
-$res = mysqli_num_rows($results);
-if($res > 0){
-
-while ($row  = mysqli_fetch_assoc($results))  {
-  ?>
-    <input type="checkbox" class="" value="<?php echo $row['category']; ?>"  >
-    <label  >  <?php echo $row['category']; ?></label><br />
-  
-  <?php
-  }
-
-
-}
-
-?>
-                                                  </label>
-                                                </div><!-- End .custom-checkbox -->
-                                               
-                                            </div><!-- End .filter-item -->
-
-                                    </div><!-- End .widget-body -->
-                                </div><!-- End .collapse -->
-                            </div><!-- End .widget -->
-
-                            <div class="widget widget-collapsible">
-                                <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-2" role="button" aria-expanded="true" aria-controls="widget-2">
-                                        width
-                                    </a>
-                                </h3><!-- End .widget-title -->
-
-                                <div class="collapse show" id="widget-2">
-                                    <div class="widget-body">
-                                        <div class="filter-items">
-                                            <div class="filter-item">
-                                                <div class="custom-control custom-checkbox">
-                                                <?php
-$queryfilter = "SELECT DISTINCT(width) FROM products ORDER BY id DESC";
-
-$results = mysqli_query($conn,$queryfilter);
-$res = mysqli_num_rows($results);
-if($res > 0){
-
-while ($row  = mysqli_fetch_assoc($results))
-{
-  ?>
-    <input type="checkbox" class="" value="<?php echo $row['width']; ?>"  >
-    <label  >  <?php echo $row['width']; ?>
-  </label><br />
-  
-  <?php
-  }
-}
-
-?>
-                                                </div><!-- End .custom-checkbox -->
-                                            </div><!-- End .filter-item -->
-                                        
-                                        </div><!-- End .filter-items -->
-                                    </div><!-- End .widget-body -->
-                                </div><!-- End .collapse -->
-                            </div><!-- End .widget -->
-                            <div class="widget widget-collapsible">
-                                <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-2" role="button" aria-expanded="true" aria-controls="widget-2">
-                                    height
-                                    </a>
-                                </h3><!-- End .widget-title -->
-
-                                <div class="collapse show" id="widget-2">
-                                    <div class="widget-body">
-                                        <div class="filter-items">
-                                            <div class="filter-item">
-                                                <div class="custom-control custom-checkbox">
-                                                <?php
-$queryfilter = "SELECT DISTINCT(height) FROM products ORDER BY id DESC";
-
-$results = mysqli_query($conn,$queryfilter);
-$res = mysqli_num_rows($results);
-if($res > 0){
-
-while ($row  = mysqli_fetch_assoc($results))
-{
-  ?>
-    <input type="checkbox" class="" value="<?php echo $row['height']; ?>"  >
-    <label  >  <?php echo $row['height']; ?>
-  </label><br />
-  
-  <?php
-  }
-}
-
-?>
-                                                </div><!-- End .custom-checkbox -->
-                                            </div><!-- End .filter-item -->
-                                        
-                                        </div><!-- End .filter-items -->
-                                    </div><!-- End .widget-body -->
-                                </div><!-- End .collapse -->
-                            </div>
-                            <div class="widget widget-collapsible">
-                                <h3 class="widget-title">
-                                    <a data-toggle="collapse" href="#widget-2" role="button" aria-expanded="true" aria-controls="widget-2">
-                                    weight
-                                    </a>
-                                </h3><!-- End .widget-title -->
-
-                                <div class="collapse show" id="widget-2">
-                                    <div class="widget-body">
-                                        <div class="filter-items">
-                                            <div class="filter-item">
-                                                <div class="custom-control custom-checkbox">
-                                                <?php
-$queryfilter = "SELECT DISTINCT(weight) FROM products ORDER BY id DESC";
-
-$results = mysqli_query($conn,$queryfilter);
-$res = mysqli_num_rows($results);
-if($res > 0){
-
-while ($row  = mysqli_fetch_assoc($results))
-{
-  ?>
-    <input type="checkbox" class="" value="<?php echo $row['weight']; ?>"  >
-    <label  >  <?php echo $row['weight']; ?>
-  </label><br />
-  
-  <?php
-  }
-}
-
-?>
-                                                </div><!-- End .custom-checkbox -->
-                                            </div><!-- End .filter-item -->
-                                        
-                                        </div><!-- End .filter-items -->
-                                    </div><!-- End .widget-body -->
-                                </div><!-- End .collapse -->
-                            </div><!-- End .widget -->
-                        </div><!-- End .sidebar-filter-wrapper -->
-                    </aside><!-- End .sidebar-filter -->
-
+                    
+                           
 
                     
                 </div><!-- End .container -->
