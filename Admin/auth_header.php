@@ -52,7 +52,7 @@ if(!(isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION['
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-
+    <link rel="stylesheet" href="loader.css" />
     <link rel="stylesheet" href="assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
@@ -66,6 +66,18 @@ if(!(isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION['
   </head>
 
   <body>
+  <div id="resultLoading" style="display: none; width: 100%; height: 100%; position: fixed; z-index: 10000; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto;">
+                            <div style="width: 340px; height: 200px; text-align: center; position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto; z-index: 10; color: rgb(255, 255, 255);">
+                                <div class="uil-default-css">
+                                    <div class="loader">Loading...</div>
+
+                                </div>
+                                <div class="resultLoading" style="display: block; font-size: 18px; font-weight: 300;">&nbsp;</div>
+                            </div>
+                            <div style="background: rgb(0, 0, 0); opacity: 0.6; width: 100%; height: 100%; position: absolute; top: 0px;"></div>
+                        </div>
+                        <!-- Content -->
+                        <div id="loader"> </div>
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -351,3 +363,4 @@ if(!(isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION['
                     </div>
 
           <!-- / Navbar -->
+    

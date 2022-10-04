@@ -21,7 +21,20 @@
     <!-- / Layout wrapper -->
 
     
+    <script>
+        var showLoader = function (text) {
+            $('#resultLoading').show();
+            $('#resultLoading').find('.loader-text').html(text);
+        };
 
+        jQuery(document).ready(function () {
+            jQuery(window).on("beforeunload ", function () {
+                showLoader('Loading, please wait...');
+            });
+        });
+
+        $("#loader").fadeOut(1000);
+    </script>
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src="assets/vendor/libs/jquery/jquery.js"></script>
