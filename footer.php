@@ -246,6 +246,21 @@
 
    
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        var showLoader = function (text) {
+            $('#resultLoading').show();
+            $('#resultLoading').find('.loader-text').html(text);
+        };
+
+        jQuery(document).ready(function () {
+            jQuery(window).on("beforeunload ", function () {
+                showLoader('Loading, please wait...');
+            });
+        });
+
+        $("#loader").fadeOut(1000);
+    </script>
     <!-- Plugins JS File -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>

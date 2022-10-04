@@ -122,6 +122,7 @@ $query = "UPDATE products SET comment = '$comment',cname = '$cname', cemail = '$
 </head>
 
 <body>
+  <?php include 'loader.php';?>
     <div class="page-wrapper">
         <header class="header">
 

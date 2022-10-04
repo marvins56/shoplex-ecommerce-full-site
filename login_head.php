@@ -65,7 +65,7 @@ $search = "";
     <!-- Plugins CSS File -->
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="loader.css">
     <!-- Main CSS File -->
 
     <link rel="stylesheet" href="assets/css/style.css">
@@ -75,6 +75,7 @@ $search = "";
 
 
 <body>
+<?php include 'loader.php';?>
 
     <div class="page-wrapper">
 

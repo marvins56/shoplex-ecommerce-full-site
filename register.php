@@ -111,7 +111,7 @@ echo '<div class="alert alert-success" role="alert">
 
 
  ?>
-
+    <?php include 'loader.php';?>
          <main class="main">
              <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
                  <div class="container">

@@ -71,6 +71,7 @@
   </head>
 
   <body>
+    <?php include 'loader.php';?>
     <div class="page-wrapper">
       <header class="header header-intro-clearance header-4">
         <div class="header-top">
