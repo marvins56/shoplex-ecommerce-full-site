@@ -60,7 +60,7 @@ if($res > 0){
           <div class="product">
             <figure class="product-media">
               <a href="#">
-                <img src="system/pages/'.$location.'" alt="Product image">
+                <img src="Admin/'.$location.'" alt="Product image">
               </a>
             </figure>
 
@@ -117,7 +117,7 @@ if($resdeals > 0){
           <div class="product">
             <figure class="product-media">
               <a href="#">
-                <img src="system/pages/'.$locationdeals.'" alt="Product image">
+                <img src="Admin/'.$locationdeals.'" alt="Product image">
               </a>
             </figure>
 

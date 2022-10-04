@@ -320,7 +320,7 @@ echo('<div class="alert alert-danger " role="alert" style=" width:80%; margin:au
 
                                                                  <figure class="product-image-container">
                                                                      <a href="#" class="product-image">
-                                                                         <img src="system/pages/'.$location.'" alt="product">
+                                                                         <img src="Admin/'.$location.'" alt="product">
                                                                      </a>
                                                                  </figure>
 
@@ -379,7 +379,7 @@ echo('<div class="alert alert-danger " role="alert" style=" width:80%; margin:au
 
                                  <figure class="product-image-container">
                                    <a href="#" class="product-image">
-                                       <img src="system/pages/'.$locationdeals.'" alt="product">
+                                       <img src="Admin/'.$locationdeals.'" alt="product">
                                    </a>
                                  </figure>
                                  <a href="deletecart.php?deleteid='.$iddeals.'" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
@@ -493,7 +493,7 @@ echo('<div class="alert alert-danger " role="alert" style=" width:80%; margin:au
 		                					<tbody>
 		                						<tr>
                                   <?php echo '<div class="single-related-product d-flex">
-				<a href="#"><img src="system/pages/'.$location.'" alt="" style="width:100px;"></a>
+				<a href="#"><img src="'.$location.'" alt="" style="width:100px;"></a>
 			</div>'; ?>
 
 		                						</tr>

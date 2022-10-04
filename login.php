@@ -59,21 +59,10 @@ include 'login_head.php';
 							    	<div class="form-choice">
 								    	<p class="text-center">or sign in with</p>
 								    	<div class="row">
-								    		<div class="col-sm-6">
-								    			<a href="404.php" class="btn btn-login btn-g">
-								    				<i class="icon-google"></i>
-								    				Login With Google
-								    			</a>
-								    		</div><!-- End .col-6 -->
-								    		<div class="col-sm-6">
-								    			<a href="404.php" class="btn btn-login btn-f">
-								    				<i class="icon-facebook-f"></i>
-								    				Login With Facebook
-								    			</a>
-								    		</div>
+								    
                         <div class="col-sm-6">
                             dont have an account?
-                          <a href="register.php" class="btn btn-signup btn-f">
+                          <a href="register.php" class="btn btn-signup btn-primary">
 
                         Register
                           </a>

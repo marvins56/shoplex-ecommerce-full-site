@@ -34,7 +34,7 @@
                     <tr>
                     <td>
                 
-                   <img src="'.$location.'"  class="img-fluid avatar avatar-lg me-2cborder-radius-lg" />
+                   <img src="Admin/'.$location.'"  class="img-fluid avatar avatar-lg me-2cborder-radius-lg" />
                 
                     </td>
                     <td>'.$productname.'</td>
@@ -100,7 +100,7 @@
                 <tr>
                 <td>
             
-               <img src="'.$location.'"  class="img-fluid avatar avatar-lg me-2cborder-radius-lg" />
+               <img src="Admin/'.$location.'"  class="img-fluid avatar avatar-lg me-2cborder-radius-lg" />
             
                 </td>
                 <td>'.$productname.'</td>

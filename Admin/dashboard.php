@@ -102,7 +102,7 @@ if(count($errors) == 0){
                   today. Check your new badge in your profile.
                 </p>
 
-                <a href="javascript:;" class="btn btn-sm btn-outline-primary"
+                <a href="settings.php" class="btn btn-sm btn-outline-primary"
                   >UPLOAD PRODUCTS</a
                 >
               </div>
@@ -115,6 +115,10 @@ if(count($errors) == 0){
                   alt="View Badge User"
                   data-app-dark-img="illustrations/man-with-laptop-dark.png"
                   data-app-light-img="illustrations/man-with-laptop-light.png"
+                  style="border-radius:10px;
+                  border:3px solid grey;
+                  margin-bottom:10px;
+                  "
                 />'?>
               </div>
             </div>

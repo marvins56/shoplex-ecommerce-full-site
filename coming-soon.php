@@ -97,9 +97,6 @@ server error!!
                                     <div class="input-group-append">
                                         <input name ="newsletter"class="btn btn-outline-primary-2" type="submit">
                                             <span></span>
-
-
-
                                     </div>
                                 </div>
                             </form>

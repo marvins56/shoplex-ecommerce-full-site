@@ -191,7 +191,7 @@ if(count($errors) == 0){
                       <div class="product">
                       <figure class="product-media">
                       <a href="#">
-                      <img src="system/pages/'.$location.'" alt="Product image">
+                      <img src="'.$location.'" alt="Product image">
                       </a>
                       </figure>
 

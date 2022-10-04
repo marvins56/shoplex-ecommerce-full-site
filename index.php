@@ -25,7 +25,7 @@ if($resultbanner){
         <!-- End .intro-slider-container -->
         <div class="intro-slider-container mb-0">
             <div class="intro-slider owl-carousel owl-theme owl-nav-inside owl-light" data-toggle="owl" data-owl-options='{"nav": false, "dots": false}'>
-                <div class="intro-slide" style="background-image: url(Admin/<?php echo $location1; ?>);">
+                <div class="intro-slide" style="background-image: url(<?php echo $location1; ?>'');">
                     <div class="container intro-content text-center">
                      
                       <h1 class=" text-white"><?php echo $description1; ?></h1><!-- End .intro-title -->
@@ -33,7 +33,7 @@ if($resultbanner){
                         <a href="category.php" class="btn btn-primary">Discover NOW</a>
                     </div><!-- End .intro-content -->
                 </div><!-- End .intro-slide -->
-                <div class="intro-slide" style="background-image: url(system/pages/<?php echo $location1; ?>);">
+                <div class="intro-slide" style="background-image: url(<?php echo $location1; ?>);">
                     <div class="container intro-content text-center">
                     <h1 class=" text-white"><?php echo $description1; ?></h1><!-- End .intro-title -->
                         <h3 class="intro-subtitle text-white"><?php echo $header1; ?></h3><!-- End .h3 intro-subtitle -->
@@ -273,7 +273,7 @@ if($resultbanner){
                           <figure class="product-media">
                               <span class="product-label label-new">sales</span>
                               <a href="product.html">
-                                <a href="product.php?productid='.$id3.'">  <img src="system/pages/'.$location3.'" alt="Product image" class="product-image"></a>
+                                <a href="product.php?productid='.$id3.'">  <img src="Admin/'.$location3.'" alt="Product image" class="product-image"></a>
                               </a>
 
 

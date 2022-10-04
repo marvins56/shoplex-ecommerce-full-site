@@ -248,7 +248,7 @@ $query = "UPDATE products SET comment = '$comment',cname = '$cname', cemail = '$
 
                                                                 <figure class="product-image-container">
                                                                     <a href="#" class="product-image">
-                                                                        <img src="'.$location.'" alt="product">
+                                                                        <img src="Admin/'.$location.'" alt="product">
                                                                     </a>
                                                                 </figure>
 
@@ -307,7 +307,7 @@ $query = "UPDATE products SET comment = '$comment',cname = '$cname', cemail = '$
 
                                 <figure class="product-image-container">
                                   <a href="#" class="product-image">
-                                      <img src="'.$locationdeals.'" alt="product">
+                                      <img src="Admin/'.$locationdeals.'" alt="product">
                                   </a>
                                 </figure>
                                 <a href="deletecart.php?deleteid='.$iddeals.'" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
@@ -367,20 +367,20 @@ $query = "UPDATE products SET comment = '$comment',cname = '$cname', cemail = '$
                             <div class="product-gallery-carousel owl-carousel owl-full owl-nav-dark">
                                 <figure class="product-gallery-image">
 
-                                  	<?php echo('<img src="'.$locationnew.'" data-zoom-image="'.$locationnew.'" alt="product image">'); ?>
+                                  	<?php echo('<img src="Admin/'.$locationnew.'" data-zoom-image="'.$locationnew.'" alt="product image">'); ?>
 
                                 </figure><!-- End .product-gallery-image -->
 
                                 <figure class="product-gallery-image">
-	<?php echo('<img src="'.$locationnew.'" data-zoom-image="'.$locationnew.'" alt="product image">'); ?>
+	<?php echo('<img src="'.$locationnew.'" data-zoom-image="Admin/'.$locationnew.'" alt="product image">'); ?>
                        </figure><!-- End .product-gallery-image -->
 
                                 <figure class="product-gallery-image">
-                                  	<?php echo('<img src="'.$locationnew.'" data-zoom-image="'.$locationnew.'" alt="product image">'); ?>
+                                  	<?php echo('<img src="Admin/'.$locationnew.'" data-zoom-image="'.$locationnew.'" alt="product image">'); ?>
                                 </figure><!-- End .product-gallery-image -->
 
                                 <figure class="product-gallery-image">
-                                  	<?php echo('<img src="'.$locationnew.'" data-zoom-image="'.$locationnew.'" alt="product image">'); ?>
+                                  	<?php echo('<img src="Admin/'.$locationnew.'" data-zoom-image="'.$locationnew.'" alt="product image">'); ?>
                                 </figure><!-- End .product-gallery-image -->
                             </div><!-- End .owl-carousel -->
                         </div><!-- End .container -->

@@ -52,7 +52,7 @@ echo'
         <figure class="product-media">
             <span class="product-label label-new">New</span>
             <a href="product_deal.php?productid='.$id.'">
-              <a href="product_deal.php?productid='.$id.'">  <img src="system/pages/'.$location.'" alt="Product image" class="product-image"></a>
+              <a href="product_deal.php?productid='.$id.'">  <img src="Admin/'.$location.'" alt="Product image" class="product-image"></a>
             </a>
 
             <div class="product-action-vertical">

@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
           {array_push($errors,"weak password");}
 
 // checking if user exists
-$user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
+$user_check_query = "SELECT * FROM admin WHERE username='$username' OR email='$email' LIMIT 1";
 $result = mysqli_query($conn, $user_check_query);
 $user = mysqli_fetch_assoc($result);
 
