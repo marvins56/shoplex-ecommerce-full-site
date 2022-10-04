@@ -121,7 +121,7 @@ server error!!
                 </div><!-- End .col-md-9 col-lg-8 -->
             </div><!-- End .row -->
         </div><!-- End .container -->
-        <?php echo '<div class="soon-bg bg-image" style="background-image: url(system/pages/'.$locationdeal.')"></div>' ?>
+        <?php echo '<div class="soon-bg bg-image" style="background-image: url('.$locationdeal.')"></div>' ?>
         <!-- End .soon-bg bg-image -->
     </div><!-- End .soon -->
     <!-- Plugins JS File -->

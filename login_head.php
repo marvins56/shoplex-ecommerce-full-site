@@ -330,7 +330,7 @@ else{
 
                                                                     <a href="#" class="product-image">
 
-                                                                        <img src="system/pages/'.$location.'" alt="product">
+                                                                        <img src="'.$location.'" alt="product">
 
                                                                     </a>
 
@@ -450,7 +450,7 @@ else{
 
                                   <a href="#" class="product-image">
 
-                                      <img src="system/pages/'.$locationdeals.'" alt="product">
+                                      <img src="'.$locationdeals.'" alt="product">
 
                                   </a>
 
