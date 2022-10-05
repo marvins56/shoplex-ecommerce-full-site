@@ -105,7 +105,7 @@ if(count($errors) == 0){
 
 
 
- <img  style="width:120px; margin: auto;border-radius:50%; border:4px solid white;"src="<?php echo $profileimage; ?>">
+ <img  style="width:120px; margin: auto;border-radius:50%; border:4px solid white;" src="Admin/<?php echo $profileimage ?>" >
 
 
         		</div><!-- End .container -->
@@ -191,7 +191,7 @@ if(count($errors) == 0){
                       <div class="product">
                       <figure class="product-media">
                       <a href="#">
-                      <img src="'.$location.'" alt="Product image">
+                      <img src="../'.$location.'" alt="Product image">
                       </a>
                       </figure>
 

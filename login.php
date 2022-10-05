@@ -50,19 +50,16 @@ include 'login_head.php';
 							    		</div><!-- End .form-group -->
 
 							    		<div class="form-footer">
-							    			<input type="submit" name="login" class="btn btn-outline-primary-2">
-			                				
-
-
+							    			<input type="submit" name="login" class="btn btn-outline-primary-2 w-100">
+			           
 							    		</div><!-- End .form-footer -->
 							    	</form>
 							    	<div class="form-choice">
-								    	<p class="text-center">or sign in with</p>
 								    	<div class="row">
 								    
-                        <div class="col-sm-6">
-                            dont have an account?
-                          <a href="register.php" class="btn btn-signup btn-primary">
+                        <div class="col-sm-12">
+                            dont have an account? <br>
+                          <a href="register.php" class=" mt-3 btn btn-primary w-50">
 
                         Register
                           </a>

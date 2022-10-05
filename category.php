@@ -66,7 +66,7 @@ while($row = mysqli_fetch_array($tab_result))
         <figure class="product-media">
             <span class="product-label label-new">New</span>
             <a href="product.html">
-              <a href="product.php?productid='.$id.'">  <img src="'.$location.'" alt="Product image" class="product-image"></a>
+              <a href="product.php?productid='.$id.'">  <img src="Admin/'.$location.'" alt="Product image" class="product-image"></a>
             </a>
 
             <div class="product-action-vertical">

@@ -175,10 +175,14 @@ if(!(isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION['
               </a>
             </li>
             <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
+              <a href="javascript:void(0);"
+               class="menu-link menu-toggle"  data-bs-toggle="offcanvas"
+                 data-bs-target="#offcanvasBackdrop"
+                aria-controls="offcanvasBackdrop">
+              <i class="bx bx-user me-2"></i>
                 <div data-i18n="Layouts">My Profile</div>
               </a>
+
             </li>
             <li class="menu-item">
               <a href="settings.php" class="menu-link ">
@@ -290,7 +294,7 @@ if(!(isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION['
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a class="dropdown-item" href="settings.php">
                         <i class="bx bx-cog me-2"></i>
                         <span class="align-middle">Settings</span>
                       </a>

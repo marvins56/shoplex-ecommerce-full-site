@@ -29,12 +29,12 @@
                     $category = $row['category'];
     
                     $description = $row['description'];
-                    $location = $row['location'];}
+                    $location = $row['location'];
                     echo('
                     <tr>
                     <td>
                 
-                   <img src="Admin/'.$location.'"  class="img-fluid avatar avatar-lg me-2cborder-radius-lg" />
+                   <img src="'.$location.'"  class="img-fluid avatar avatar-lg me-2cborder-radius-lg" />
                 
                     </td>
                     <td>'.$productname.'</td>
@@ -56,6 +56,8 @@
                     </td>
                   </tr>
                     ');
+                  }
+                 
                     
                 }
             }
@@ -88,19 +90,20 @@
           $result = mysqli_query($conn,$query);
 
           if($result){
-            if(mysqli_num_rows($result)> 0){   while ($row  = mysqli_fetch_assoc($result)) {
+            if(mysqli_num_rows($result)> 0)
+            {   while ($row  = mysqli_fetch_assoc($result)) {
                 $id = $row['id'];
                 $productname = $row['productname'];
                 $price = $row['price'];
                 $category = $row['category'];
 
                 $description = $row['description'];
-                $location = $row['location'];}
+                $location = $row['location'];
                 echo('
                 <tr>
                 <td>
             
-               <img src="Admin/'.$location.'"  class="img-fluid avatar avatar-lg me-2cborder-radius-lg" />
+               <img src="'.$location.'"  class="img-fluid avatar avatar-lg me-2cborder-radius-lg" />
             
                 </td>
                 <td>'.$productname.'</td>
@@ -122,6 +125,8 @@
                 </td>
               </tr>
                 ');
+              }
+               
                 
                 
             }

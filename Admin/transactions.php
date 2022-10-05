@@ -11,8 +11,10 @@
                         <th>PRODUCCT</th>
                         <th>NAME</th>
                         <th>PRICE</th>
-                        <th>CUATOMER</th>
-                        <th>STATUS</th>
+                        <th>CUSTOMER</th>
+                        <th>QTY</th>
+                        <th>PAYMENT STATUS</th>
+                        <th>DATE</th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
@@ -33,6 +35,7 @@
                 $city =$row['city'];
                 $address = $row['address'];
                 $country = $row['country'];
+                $qty = $row['quantity'];
 
                 $street= $row['street'];
                 $contact = $row['contact'];
@@ -49,7 +52,7 @@
                 <td>
                   '. $price .'
                 </td>
-                <td><span class="badge bg-label-primary me-1">'. $username .','.$email.','.$contact.' </span></td>
+                <td><span class="badge bg-label-primary me-1">'. $username .',<br /><br />'.$email.',<br /><br />'.$contact.' </span></td>
                 <td>
                 <td><span class="badge bg-label-primary me-1">status</span></td>
                 <td>

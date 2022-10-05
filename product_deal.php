@@ -249,7 +249,7 @@ $query = "UPDATE products SET comment = '$comment',cname = '$cname', cemail = '$
 
                                                                 <figure class="product-image-container">
                                                                     <a href="#" class="product-image">
-                                                                        <img src="Admin/'.$location.'" alt="product">
+                                                                        <img src="'.$location.'" alt="product">
                                                                     </a>
                                                                 </figure>
 

@@ -82,10 +82,15 @@ if(isset($_POST['qty'])){
 
 
 //**********************************
+$totalprice = $quantity * $price;
 $query_sql = "INSERT into orders (productname,price,country,city,address,street,postcode,aboutme,name,location,contact,quantity,username,email)
-VALUES ('$productname','$price','$country','$city','$address','$street','$postcode','$aboutme','$name','$location','$contact','$quantity','$username','$email')";
+VALUES ('$productname','$totalprice','$country','$city','$address','$street','$postcode','$aboutme','$name','$location','$contact','$quantity','$username','$email')";
 
 $resQ =mysqli_query($conn,$query_sql);
+
+
+
+
     if($resQ){
 
       //Integrate Rave pament
@@ -157,9 +162,6 @@ $resQ =mysqli_query($conn,$query_sql);
   else{
 echo('<div class="alert alert-danger " role="alert" style=" width:80%; margin:auto; text-align:center;">ORDER PLACEMENT FAILED</div>');
     }
-
-
-
 
     }
 }

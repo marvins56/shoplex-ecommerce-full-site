@@ -469,8 +469,6 @@ During upload of images make sure to follow the following
                           </div>
                         </div>
 
-
-
                              <div class="modal fade" id="backDropModal2" data-bs-backdrop="static" tabindex="-1">
                           <div class="modal-dialog">
                             <form class="modal-content" enctype="multipart/form-data" method="POST">

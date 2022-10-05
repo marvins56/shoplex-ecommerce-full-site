@@ -160,32 +160,18 @@ echo '<div class="alert alert-success" role="alert">
                        </div><!-- End .form-group -->
 
  							    		<div class="form-footer">
- 							    			<input type="submit" name="register"class="btn btn-outline-primary-2">
- 			                					<span>SIGN UP</span>
- 			            						<i class="icon-long-arrow-right"></i>
-
-
-
+ 							    			<input type="submit" name="register"class="btn btn-outline-primary-2 w-100">
+ 			                			
  							    		</div><!-- End .form-footer -->
  							    	</form>
  							    	<div class="form-choice">
- 								    	<p class="text-center">or sign in with</p>
+ 								    
  								    	<div class="row">
- 								    		<div class="col-sm-6">
- 								    			<a href="404.php" class="btn btn-login btn-g">
- 								    				<i class="icon-google"></i>
- 								    				Login With Google
- 								    			</a>
- 								    		</div><!-- End .col-6 -->
- 								    		<div class="col-sm-6">
- 								    			<a href="404.php" class="btn btn-login  btn-f">
- 								    				<i class="icon-facebook-f"></i>
- 								    				Login With Facebook
- 								    			</a>
- 								    		</div>
-                        <div class="col-sm-6">
-                             have an account?
-                          <a href="login.php" class="btn btn-signup btn-f">
+ 								    		<!-- End .col-6 -->
+ 								    	
+                        <div class="col-sm-12">
+                             have an account? <br>
+                          <a href="login.php" class="mt-3 btn btn-primary w-50">
 
                     login
                           </a>

@@ -91,9 +91,6 @@ if(isset($_POST['banner'])){
           if(empty($description1) )
           {array_push($errors,"please enter banner description");}
 
-
-
-
               if (count($errors) == 0) {
 
 
@@ -120,14 +117,19 @@ if(isset($_POST['banner'])){
                                               $query= "SELECT * FROM banner";
                                               $result = mysqli_query($conn,$query);
 
-                                              while($row = mysqli_fetch_assoc($result)){
+
+                                              if( mysqli_num_rows($result) > 0){ 
+                                                 while($row = mysqli_fetch_assoc($result)){
                                                 $id3 = $row['id'];
 
-                                              }
+                                              }}
+                                            
 
                                                 // Insert record
                                                 $query = "UPDATE banner SET id = '$id3', header= '$header',
                                                 description = '$description1',name ='".$name."', location='".$target_file."'  where id ='$id3'";
+// $query = "INSERT INTO banner (header,description,name,location) values ('$header','$description1','".$name."','".$target_file."')";
+
 
                                             $res =mysqli_query($conn,$query);
                                                 if($res){
@@ -225,26 +227,44 @@ $detaildescription  = mysqli_real_escape_string($conn, $_POST['detaildescription
 
                                             $res =  mysqli_query($conn,$query);
                                                 if($res){
+                                                  if( mysqli_num_rows($res) > 0)
+{
+  echo(' 
+  <div class="content-wrapper">
+    
+            <div class="container-xxl flex-grow-1 container-p-y">
+  <div class="alert alert-success alert-dismissible w-100 ml-5 " role="alert">
+  product  uploaded sucessfully
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+</div>
+</div>');
+}
 
-                                                echo(' 
-                                                <div class="alert alert-success alert-dismissible " role="alert">
-                                                product  uploaded sucessfully
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>');
+                            
                                                   }
                                               else{
                                               echo('
-                                               
+                                              <div class="content-wrapper">
+    
+                                              <div class="container-xxl flex-grow-1 container-p-y">
                                               <div class="alert alert-danger alert-dismissible " role="alert">
                                               data entry failed
                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    </div>
                     </div>');
+                    
                                                 }
                                             }else{
                                         echo('
+                                        <div class="content-wrapper">
+                                        <div class="container-xxl flex-grow-1 container-p-y">
                                         <div class="alert alert-danger alert-dismissible " role="alert">
                                        PRODUCT UPLOAD FAILED
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              </div>
               </div>
                                         
                                         
@@ -330,8 +350,10 @@ $detaildescription2 = mysqli_real_escape_string($conn, $_POST['detaildescription
                                                 if($res){
 
                                                 echo('
+                                                <div class="content-wrapper">
+                                                <div class="container-xxl flex-grow-1 container-p-y">
                                                 <div
-                                                class="bs-toast toast fade show bg-success"
+                                                class="bs-toast toast fade show bg-success  w-100  ml-5"
                                                 role="alert"
                                                 aria-live="assertive"
                                                 aria-atomic="true"
@@ -346,11 +368,15 @@ $detaildescription2 = mysqli_real_escape_string($conn, $_POST['detaildescription
                                                 PRODUCT UPLOADED SUCCESSFULLY
                                                 </div>
                                                 </div>
+                                                <div class="content-wrapper">
+                                                <div class="container-xxl flex-grow-1 container-p-y">
                                                 
                                               ');
                                                   }
                                               else{
                                               echo('
+                                              <div class="content-wrapper">
+                                              <div class="container-xxl flex-grow-1 container-p-y">
                                               <div
                                               class="bs-toast toast fade show bg-danger"
                                               role="alert"
@@ -367,11 +393,15 @@ $detaildescription2 = mysqli_real_escape_string($conn, $_POST['detaildescription
                                               data entry failed
                                               </div>
                                               </div>
+                                              </div>
+                                              </div>
                                               
 ');
                                                 }
                                             }else{
                                         echo('
+                                        <div class="content-wrapper">
+                                        <div class="container-xxl flex-grow-1 container-p-y">
                                         <div
                                         class="bs-toast toast fade show bg-danger"
                                         role="alert"
@@ -386,6 +416,8 @@ $detaildescription2 = mysqli_real_escape_string($conn, $_POST['detaildescription
                                         </div>
                                         <div class="toast-body">
                                         product upload failed
+                                        </div>
+                                        </div>
                                         </div>
                                         </div>
                    ');
