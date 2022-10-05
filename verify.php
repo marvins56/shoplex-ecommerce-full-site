@@ -1,6 +1,6 @@
 <?php
 
-$productid = $_GET['productid'];
+include('database.php');
 
 if(isset($_GET["transaction_id"]) AND isset($_GET["status"])  AND isset($_GET["tx_ref"])){
 
@@ -9,8 +9,6 @@ if(isset($_GET["transaction_id"]) AND isset($_GET["status"])  AND isset($_GET["t
     $trans_status = htmlspecialchars($_GET['status']);
 
     $trans_ref = htmlspecialchars($_GET['tx_ref']);
-
-
 
     //Verify Endpoint
 
@@ -95,25 +93,47 @@ if(isset($_GET["transaction_id"]) AND isset($_GET["status"])  AND isset($_GET["t
 
   $phone =  $result->data->customer->phone_number;
 
-
-
+  
   if(($status != $trans_status) OR ($trans_id != $id)){
 
+    $randrefs = (int)$_SESSION['random_ref'];
+    $query = "UPDATE orders SET status = '$status'  where random_ref ='$randrefs'";
+    
+    $resultr = mysqli_query($conn,$query);
+   
+    if($resultr){
      header("Location: paymentfailed.php");
+    }
+    exit;
+  }
+  
+  else if(($status == "cancelled")){
 
-     exit;
+    $randrefs = (int)$_SESSION['random_ref'];
+    $query = "UPDATE orders SET status = '$status'  where random_ref ='$randrefs'";
+    $resultr = mysqli_query($conn,$query);
+    
+    if($resultr){
+     header("Location: paymentfailed.php");
+    }
+    exit;
 
-  }else{
-
-
-
-     header("Location: paymentsuccess.php");
-
+  }
+  
+  else{
+ 
+    $randref = $_SESSION['random_ref'];
+    $query = "UPDATE orders SET status = '$status'  where random_ref ='$randref'";
+    
+    $resultr = mysqli_query($conn,$query);
+    
+    if($resultr){
+        header("Location: paymentsuccess.php");   
+    }
+    exit;
   }
 
   curl_close($curl);
-
-
 
 }
 

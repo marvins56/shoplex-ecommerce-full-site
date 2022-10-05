@@ -331,7 +331,7 @@ else{
 
                                                                     <a href="#" class="product-image">
 
-                                                                        <img src="'.$location.'" alt="product">
+                                                                        <img src="Admin/'.$location.'" alt="product">
 
                                                                     </a>
 

@@ -78,14 +78,17 @@ if(isset($_POST['qty'])){
 // payment processing********************************
 
 
-
+$productcost = $quantity * $price;
 //**********************************
-$query_sql = "INSERT into orders (productname,price,country,city,address,street,postcode,aboutme,name,location,contact,quantity,username,email)
-VALUES ('$productname','$price','$country','$city','$address','$street','$postcode','$aboutme','$name','$location','$contact','$quantity','$username','$email')";
+$random_ref = rand();
+$initial_status = "pending";
 
+$query_sql = "INSERT into orders (productname,price,country,city,address,street,postcode,aboutme,name,location,contact,quantity,username,email,status,random_ref)
+VALUES ('$productname','$productcost','$country','$city','$address','$street','$postcode','$aboutme','$name','$location','$contact','$quantity','$username','$email','$initial_status','$random_ref')";
 $resQ =mysqli_query($conn,$query_sql);
-    if($resQ){
 
+    if($resQ){
+      (int)$_SESSION['random_ref'] = $random_ref;
       //Integrate Rave pament
       $endpoint = "https://api.flutterwave.com/v3/payments";
 
@@ -94,7 +97,7 @@ $resQ =mysqli_query($conn,$query_sql);
           "tx_ref" => uniqid().uniqid(),
           "currency" => "UGX",
           'payment_options' => 'Mobile Money',
-          "amount" => $price,
+          "amount" => $productcost,
           "customer" =>array(
               "name" => $username,
               "email" => $email,
@@ -108,7 +111,7 @@ $resQ =mysqli_query($conn,$query_sql);
           "meta" =>array(
               "reason" => "payment for ". $productname,
           ),
-         "redirect_url" =>  "https://shoplexug.42web.io/verify.php"
+         "redirect_url" =>  "http://localhost/barnard/verify.php"
       );
 
       //Init cURL handler
@@ -135,7 +138,7 @@ $resQ =mysqli_query($conn,$query_sql);
 
       //Set the headers from endpoint
       curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-         "Authorization: Bearer FLWSECK-019c7aede86c7e57cbd57a33d12e5268-X",
+         "Authorization: Bearer FLWSECK_TEST-e67e2ac9351911695d11fcb719b9343d-X",
          "Content-Type: Application/json",
          "Cache-Control: no-cahe"
       ));
@@ -155,9 +158,6 @@ $resQ =mysqli_query($conn,$query_sql);
   else{
 echo('<div class="alert alert-danger " role="alert" style=" width:80%; margin:auto; text-align:center;">ORDER PLACEMENT FAILED</div>');
     }
-
-
-
 
     }
 }

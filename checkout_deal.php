@@ -14,12 +14,6 @@ include 'login_head.php';
 
 include 'database.php';
 
-
-
-
-
-
-
 $errors = array();
 
 $id = $_GET['productid'];
@@ -27,8 +21,6 @@ $id = $_GET['productid'];
 $query= "SELECT * FROM deals where id = $id";
 
 $result = mysqli_query($conn,$query);
-
-
 
 if ($result){
 
@@ -54,25 +46,15 @@ if ($result){
 
 }
 
-
-
-
-
 if(isset($_POST['qty'])){
 
   $quantity = $_POST['quantity'];
-
-
-
-
 
     $country = $_POST['country'];
 
     $city = $_POST['city'];
 
     $address =  $_POST['address'];
-
-
 
     $aboutme =  $_POST['aboutme'];
 
@@ -82,15 +64,9 @@ if(isset($_POST['qty'])){
 
     $contact =  $_POST['contact'];
 
-
-
-
-
   if(empty($quantity)){
 
   	array_push($errors,"please enter quantity");}
-
-
 
     if(empty($country)){
 
@@ -103,8 +79,6 @@ if(isset($_POST['qty'])){
       if(empty($address)){
 
         array_push($errors,"please enter address");}
-
-
 
         if(empty($aboutme)){
 
@@ -156,12 +130,9 @@ if(isset($_POST['qty'])){
 
           $username = $rows['username'];
 
-          $email = $rows['email'];}}
-
-
-
-
-
+          $email = $rows['email'];
+		
+		}}
 
 
 $query_sql = "INSERT into orders (productname,price,country,city,address,street,postcode,aboutme,name,location,contact,quantity,username,email)
