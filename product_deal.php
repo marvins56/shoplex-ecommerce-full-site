@@ -249,7 +249,7 @@ $query = "UPDATE products SET comment = '$comment',cname = '$cname', cemail = '$
 
                                                                 <figure class="product-image-container">
                                                                     <a href="#" class="product-image">
-                                                                        <img src="'.$location.'" alt="product">
+                                                                        <img src="Admin/'.$location.'" alt="product">
                                                                     </a>
                                                                 </figure>
 
@@ -371,14 +371,15 @@ $query = "UPDATE products SET comment = '$comment',cname = '$cname', cemail = '$
                                   	<?php echo('<img src="Admin/'.$locationnew.'" data-zoom-image="'.$locationnew.'" alt="product image">'); ?>
 
                                 </figure><!-- End .product-gallery-image -->
-
                                 <figure class="product-gallery-image">
-	<?php echo('<img src="'.$locationnew.'" data-zoom-image="Admin/'.$locationnew.'" alt="product image">'); ?>
-                       </figure><!-- End .product-gallery-image -->
 
-                                <figure class="product-gallery-image">
+<?php echo('<img src="Admin/'.$locationnew.'" data-zoom-image="'.$locationnew.'" alt="product image">'); ?>
+
+</figure><!-- End .product-gallery-image -->
+
+                       <figure class="product-gallery-image">
                                   	<?php echo('<img src="Admin/'.$locationnew.'" data-zoom-image="'.$locationnew.'" alt="product image">'); ?>
-                                </figure><!-- End .product-gallery-image -->
+                                </figure>
 
                                 <figure class="product-gallery-image">
                                   	<?php echo('<img src="Admin/'.$locationnew.'" data-zoom-image="'.$locationnew.'" alt="product image">'); ?>
@@ -403,13 +404,15 @@ $query = "UPDATE products SET comment = '$comment',cname = '$cname', cemail = '$
                                     </div><!-- End .product-content -->
 
 
-                                    <div class="details-filter-row details-row-size mb-md-1">
+             
+                                    <div class="details-filter-row details-row-size mb-md-1 text-uppercase text-bold">
                                         <label>PRICE: discount</label>
 
                                         <div class="product-size">
-                                            <a href="#" title="price">  <?php echo'<p>'.$price.' </p> ' ?></a>
 
-                                            <a href="#" title="discount" class="active">  <?php echo'<p>'.$discount.' </p> ' ?></a>
+                                            <a href="#" title="price" class="btn btn-primary-outline p-2 text-bold">  <?php echo'<p>'.$price.' </p> ' ?></a>
+
+                                            <a href="#" title="discount" class="btn btn-secondary-outline active p-2">  <?php echo'<p>'.$discount.' </p> ' ?></a>
 
                                         </div><!-- End .product-size -->
 
@@ -422,7 +425,7 @@ $query = "UPDATE products SET comment = '$comment',cname = '$cname', cemail = '$
                                             <a href="addtochartdeal.php?productid= <?php echo $id; ?>"class="btn-product btn-cart"><span>ADD TO CART</span></a>
                                         </div><!-- End .details-action-col -->
                                         <div class="details-action-col">
-                                            <a href="checkout_deal.php?productid= <?php echo $id; ?>"class="btn-product btn-cart"><span>CHECKOUT</span></a>
+                                            <a href="checkout_deal.php?productid= <?php echo $id; ?>"class="btn-product btn-cart  btn-primary text-white w-100"><span>CHECKOUT</span></a>
                                         </div><!-- End .details-action-col -->
 
                               <!-- End .details-action-wrapper -->
@@ -432,7 +435,6 @@ $query = "UPDATE products SET comment = '$comment',cname = '$cname', cemail = '$
                                         <div class="product-cat">
                                             <span>Category:</span>
                                               <?php echo'<p>'.$category.' </p> ' ?>
-
 
                                         </div><!-- End .product-cat -->
 
@@ -645,7 +647,7 @@ echo '
     <figure class="product-media">
         <span class="product-label label-new">New</span>
         <a href="product.php?productid='.$idl.'">
-  <a href="product.php?productid='.$idl.'">  <img src="'.$locationl.'" alt="Product image" class="product-image"></a>        </a>
+  <a href="product.php?productid='.$idl.'">  <img src="Admin/'.$locationl.'" alt="Product image" class="product-image"></a>        </a>
 
         <div class="product-action-vertical">
 

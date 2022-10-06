@@ -78,16 +78,19 @@ if(isset($_POST['qty'])){
 
 // payment processing********************************
 
-
+$productcost = $quantity * $price;
+//**********************************
 $random_ref = rand();
 $initial_status = "pending";
-$query_sql = "INSERT into orders (productname,price,country,city,address,street,postcode,aboutme,name,location,contact,quantity,username,email,status,random_ref)
-VALUES ('$productname','$price','$country','$city','$address','$street','$postcode','$aboutme','$name','$location','$contact','$quantity','$username','$email','$initial_status','$random_ref')";
 
+$curenttime = date('d-m-y h:i:s');
+$query_sql = "INSERT into orders (productname,price,country,city,address,street,postcode,aboutme,name,location,contact,quantity,username,email,status,random_ref,time)
+VALUES ('$productname','$productcost','$country','$city','$address','$street','$postcode','$aboutme','$name','$location','$contact','$quantity','$username','$email','$initial_status','$random_ref','$curenttime ')";
 $resQ =mysqli_query($conn,$query_sql);
 
+      
     if($resQ){
-      (int)$_SESSION['random_ref'] = $random_ref;
+      $_SESSION['random_ref'] = $random_ref;
       //Integrate Rave pament
       $endpoint = "https://api.flutterwave.com/v3/payments";
 
@@ -110,7 +113,7 @@ $resQ =mysqli_query($conn,$query_sql);
           "meta" =>array(
               "reason" => "payment for ". $productname,
           ),
-         "redirect_url" =>  "http://localhost/barnard/verify.php"
+         "redirect_url" =>  "https://shoplexug.42web.io/verify.php"
       );
 
       //Init cURL handler
@@ -200,6 +203,7 @@ echo('<div class="alert alert-danger " role="alert" style=" width:80%; margin:au
  </head>
 
  <body>
+      <?php include 'loader.php';?>
      <div class="page-wrapper">
          <header class="header">
 
@@ -430,6 +434,13 @@ echo('<div class="alert alert-danger " role="alert" style=" width:80%; margin:au
             </nav><!-- End .breadcrumb-nav -->
 
             <div class="page-content">
+            <div class="alert alert-warning alert-dismissible show mb-3" role="alert">
+  <strong>NOTE</strong> </br> please Populate the location details in the profile page to prevent entering the same details on checout.
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
             	<div class="checkout">
 	                <div class="container">
 
@@ -495,7 +506,7 @@ echo('<div class="alert alert-danger " role="alert" style=" width:80%; margin:au
 		                					<tbody>
 		                						<tr>
                                   <?php echo '<div class="single-related-product d-flex">
-				<a href="#"><img src="'.$location.'" alt="" style="width:100px;"></a>
+				<a href="#"><img src="Admin/'.$location.'" alt="" style="width:100px;"></a>
 			</div>'; ?>
 
 		                						</tr>

@@ -50,6 +50,7 @@ $locationdeal = $row6['location'];
 }
 
  ?>
+ <?php include 'loader.php';?>
     <div class="soon">
         <div class="container">
             <div class="row">

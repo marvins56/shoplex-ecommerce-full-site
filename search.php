@@ -102,7 +102,7 @@ if(count($errors) == 0){
 
                   <img
 
-                    src="'.$location.'"
+                    src="Admin/'.$location.'"
 
                     alt="Product image"
 

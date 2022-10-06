@@ -7,7 +7,7 @@ if(!(isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION['
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 $username = $_SESSION['username'];
  ?>
-
+    <?php include 'loader.php';?>
         <main class="main">
         	<div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
         		<div class="container">

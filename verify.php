@@ -42,7 +42,7 @@ if(isset($_GET["transaction_id"]) AND isset($_GET["status"])  AND isset($_GET["t
 
     curl_setopt($curl, CURLOPT_HTTPHEADER, [
 
-        "Authorization: Bearer FLWSECK-019c7aede86c7e57cbd57a33d12e5268-X",
+        "Authorization: Bearer FLWSECK_TEST-e67e2ac9351911695d11fcb719b9343d-X",
 
         "Content-Type: Application/json"
 
@@ -108,6 +108,20 @@ if(isset($_GET["transaction_id"]) AND isset($_GET["status"])  AND isset($_GET["t
   }
   
   else if(($status == "cancelled")){
+
+    $randrefs = (int)$_SESSION['random_ref'];
+    $query = "UPDATE orders SET status = '$status'  where random_ref ='$randrefs'";
+    $resultr = mysqli_query($conn,$query);
+    
+    if($resultr){
+     header("Location: paymentfailed.php");
+    }
+    exit;
+
+  }
+
+    
+  else if(($status == "successfull")){
 
     $randrefs = (int)$_SESSION['random_ref'];
     $query = "UPDATE orders SET status = '$status'  where random_ref ='$randrefs'";

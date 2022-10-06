@@ -352,9 +352,20 @@ if(count($errors) == 0){
                   </div>
                 </div>
                 <span class="d-block mb-1">INCOME IN</span>
-                <h3 class="card-title text-nowrap mb-2">$2,456</h3>
-                <small class="text-danger fw-semibold"
-                  ><i class="bx bx-down-arrow-alt"></i> -14.82%</small
+                <h3 class="card-title text-nowrap mb-2">
+                <?php
+
+                $query = "SELECT SUM(price) FROM orders where status = 'successful'";
+            $result = mysqli_query($conn,$query);
+            $rows = mysqli_fetch_row($result);
+            $total=  $rows[0];
+            echo $total . "  ";
+            ?>
+
+
+                </h3>
+                <small class="text-success fw-semibold"
+                  ><i class="bx bx-up-arrow-alt"></i> Successfull transactions</small
                 >
               </div>
             </div>
@@ -419,19 +430,19 @@ if(count($errors) == 0){
                     class="d-flex flex-sm-column flex-row align-items-start justify-content-between"
                   >
                     <div class="card-title">
-                      <h5 class="text-nowrap mb-2">CATEGORIES</h5>
+                      <h5 class="text-nowrap mb-2"> INCOME</h5>
                       
                     </div>
                     <div class="mt-sm-auto">
                       <small class="text-success text-nowrap fw-semibold"
                         ><i class="bx bx-chevron-up"></i> <?php
-                  $query = "SELECT COUNT(distinct(category)) FROM products";
+                  $query = "SELECT SUM(price) FROM orders";
           $result = mysqli_query($conn,$query);
           $rows = mysqli_fetch_row($result);
       $total=  $rows[0];
       echo $total . " ";
       ?></small >
-                      <h3 class="mb-0">categories</h3>
+                      <h3 class="mb-0">income accumulated</h3>
                     </div>
                   </div>
                   <div id="profileReportChart"></div>

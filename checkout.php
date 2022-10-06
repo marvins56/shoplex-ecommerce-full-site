@@ -86,13 +86,13 @@ $productcost = $quantity * $price;
 $random_ref = rand();
 $initial_status = "pending";
 
-$query_sql = "INSERT into orders (productname,price,country,city,address,street,postcode,aboutme,name,location,contact,quantity,username,email,status,random_ref)
-VALUES ('$productname','$productcost','$country','$city','$address','$street','$postcode','$aboutme','$name','$location','$contact','$quantity','$username','$email','$initial_status','$random_ref')";
+$curenttime = date('d-m-y h:i:s');
+$query_sql = "INSERT into orders (productname,price,country,city,address,street,postcode,aboutme,name,location,contact,quantity,username,email,status,random_ref,time)
+VALUES ('$productname','$productcost','$country','$city','$address','$street','$postcode','$aboutme','$name','$location','$contact','$quantity','$username','$email','$initial_status','$random_ref','$curenttime ')";
 $resQ =mysqli_query($conn,$query_sql);
 
       $_SESSION['random_ref'] = $random_ref;
     if($resQ){
-
       //Integrate Rave pament
       $endpoint = "https://api.flutterwave.com/v3/payments";
 
@@ -202,18 +202,7 @@ echo('<div class="alert alert-danger " role="alert" style=" width:80%; margin:au
  </head>
 
  <body>
- <div id="resultLoading" style="display: none; width: 100%; height: 100%; position: fixed; z-index: 10000; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto;">
-                            <div style="width: 340px; height: 200px; text-align: center; position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto; z-index: 10; color: rgb(255, 255, 255);">
-                                <div class="uil-default-css">
-                                    <div class="loader">Loading...</div>
-
-                                </div>
-                                <div class="resultLoading" style="display: block; font-size: 18px; font-weight: 300;">&nbsp;</div>
-                            </div>
-                            <div style="background: rgb(0, 0, 0); opacity: 0.6; width: 100%; height: 100%; position: absolute; top: 0px;"></div>
-                        </div>
-                        <!-- Content -->
-                        <div id="loader"> </div>
+ <?php include 'loader.php';?>
      <div class="page-wrapper">
          <header class="header">
 
@@ -444,9 +433,16 @@ echo('<div class="alert alert-danger " role="alert" style=" width:80%; margin:au
             </nav><!-- End .breadcrumb-nav -->
 
             <div class="page-content">
+              
             	<div class="checkout">
-	                <div class="container">
+	     <div class="container">
+      <div class="alert alert-warning alert-dismissible show mb-3" role="alert">
+  <strong>NOTE</strong> </br> please Populate the location details in the profile page to prevent entering the same details on checout.
 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
             			<form action="" method="post" >
 		                	<div class="row">
 		                		<div class="col-lg-9">
@@ -509,7 +505,7 @@ echo('<div class="alert alert-danger " role="alert" style=" width:80%; margin:au
 		                					<tbody>
 		                						<tr>
                                   <?php echo '<div class="single-related-product d-flex">
-				<a href="#"><img src="'.$location.'" alt="" style="width:100px;"></a>
+				<a href="#"><img src="Admin/'.$location.'" alt="" style="width:100px;"></a>
 			</div>'; ?>
 
 		                						</tr>
@@ -610,8 +606,11 @@ echo('<div class="alert alert-danger " role="alert" style=" width:80%; margin:au
 		                		</aside><!-- End .col-lg-3 -->
 		                	</div><!-- End .row -->
             			</form>
-	                </div><!-- End .container -->
-                </div><!-- End .checkout -->
+	                </div>
+           <!-- End .container -->
+                </div>
+                <!-- End .checkout -->
             </div><!-- End .page-content -->
-        </main><!-- End .main -->
+        </main>
+     
     <?php include 'other_footer.php'; ?>

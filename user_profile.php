@@ -164,8 +164,8 @@ if(count($errors) == 0){
                       <tr>
                       <th>Product</th>
                       <th>Price</th>
+                      <th>payment Status</th>
                       <th>Action</th>
-                      <th>status</th>
                       <th></th>
                       </tr>
                       </thead>
@@ -191,7 +191,7 @@ if(count($errors) == 0){
                       <div class="product">
                       <figure class="product-media">
                       <a href="#">
-                      <img src="../'.$location.'" alt="Product image">
+                      <img src="Admin/'.$location.'" alt="Product image">
                       </a>
                       </figure>
 
@@ -204,7 +204,7 @@ if(count($errors) == 0){
                       <td class="quantity-col">
                                 <div class="cart-product-quantity">
 
-'.$status.'
+<p class="btn btn-outline-secondary">'.$status.'</p>
 
                                 </div><!-- End .cart-product-quantity -->
                                   <div class="cart-product-quantity">
