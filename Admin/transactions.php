@@ -12,6 +12,7 @@
                         <th>NAME</th>
                         <th>PRICE</th>
                         <th>CUSTOMER</th>
+                        <th></th>
                         <th>QTY</th>
                         <th>PAYMENT STATUS</th>
                         <th>DATE</th>
@@ -36,30 +37,41 @@
                 $address = $row['address'];
                 $country = $row['country'];
                 $qty = $row['quantity'];
-
+                $dop = $row['time'];
+                $status = $row['status'];
                 $street= $row['street'];
                 $contact = $row['contact'];
+if($status == "successful"){
+  $status = '<span class="badge bg-label-success me-1">SUCECSSFUL</span></td>';
+}else{
+  $status = '<span class="badge bg-label-danger me-1">FAILED</span></td>';
 
+}
 
                 echo('
                 <tr>
                 <td>
             
                <img src="'.$location.'"  class="img-fluid avatar avatar-lg me-2cborder-radius-lg" />
-            
                 </td>
                 <td>'.$productname.'</td>
                 <td>
                   '. $price .'
                 </td>
-                <td><span class="badge bg-label-primary me-1">'. $username .',<br /><br />'.$email.',<br /><br />'.$contact.' </span></td>
+                <td><span class="badge bg-label-primary">'. $username .',<br /><br />'.$email.',<br /><br />'.$contact.' </span></td>
                 <td>
-                <td><span class="badge bg-label-primary me-1">status</span></td>
+                <td><span class="badge bg-label-primary">'. $qty .'</span></td>
+          
                 <td>
+                '.$status.'
+                </td>
+                <td>
+                '.$dop.'
+              
                 </td>
               </tr>
                 ');
-                
+       
                 
             }
         }
