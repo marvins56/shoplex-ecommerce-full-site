@@ -10,10 +10,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>shoplexug</title>
+    <title>BerNie's</title>
     <meta name="keywords" content="HTML5 Template" />
     <meta name="description" content="eccommerce" />
-    <meta name="author" content="shoplexug" />
+    <meta name="author" content="BerNie's" />
     <!-- Favicon -->
     <link
       rel="apple-touch-icon"

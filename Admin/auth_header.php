@@ -27,7 +27,7 @@ if(!(isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION['
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title> ShOpLeXUG</title>
+    <title> BerNie's</title>
 
     <meta name="description" content="" />
 
@@ -142,7 +142,7 @@ if(!(isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION['
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">ShOpLeXUG</span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">BerNie's</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">

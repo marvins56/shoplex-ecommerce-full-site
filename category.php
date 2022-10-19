@@ -369,7 +369,7 @@ echo'
                     height="25"
                   />
                   <p>
-                At  ShOpLeXUG, We offer better and good quality products and services to all our Customers
+                At  BerNie's, We offer better and good quality products and services to all our Customers
                   </p>
 
                   <div class="widget-call">
@@ -390,7 +390,7 @@ echo'
                   <!-- End .widget-title -->
 
                   <ul class="widget-list">
-                    <li><a href="about.php">About ShOpLeXUG</a></li>
+                    <li><a href="about.php">About BerNie's</a></li>
                     <li><a href="about.php">Our Services</a></li>
 
                     <li><a href="contact.php">Contact us</a></li>
@@ -449,7 +449,7 @@ echo'
             copyright  © <script>
                   document.write(new Date().getFullYear())
                 </script>,
-               ShOpLeXUG
+               BerNie's
             </p>
             <!-- End .footer-copyright -->
             <figure class="footer-payments">
@@ -578,7 +578,7 @@ echo'
           <a href="#" class="social-icon" target="_blank" title="Twitter"
             ><i class="icon-twitter"></i
           > </a>
-          <a href="https://instagram.com/ShOpLeXUG" class="social-icon" target="_blank" title="Instagram"
+          <a href="https://instagram.com/BerNie's" class="social-icon" target="_blank" title="Instagram"
             ><i class="icon-instagram"></i
           ></a>
           <a href="#" class="social-icon" target="_blank" title="Youtube"

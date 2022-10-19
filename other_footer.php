@@ -14,7 +14,7 @@
 
 	            				<img src="assets/images/logo.png" class="footer-logo" alt="Footer Logo" width="105" height="25">
 
-	            				<p> At  ShOpLeXUG, We offer better and good quality products and services to all our Customers
+	            				<p> At  BerNie's, We offer better and good quality products and services to all our Customers
 
 </p>
 
@@ -26,7 +26,7 @@
 
 	            					<a href="#" class="social-icon" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>
 
-	            					<a href="https://Instagram/ShOpLeXUG" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>
+	            					<a href="https://Instagram/BerNie's" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>
 
 	            					<a href="#" class="social-icon" target="_blank" title="Youtube"><i class="icon-youtube"></i></a>
 
@@ -52,7 +52,7 @@
 
 	            				<ul class="widget-list">
 
-	            					<li><a href="about.html">About ShOpLeXUG</a></li>
+	            					<li><a href="about.html">About BerNie's</a></li>
 
 
 
@@ -146,7 +146,7 @@
 
                   </script>,
 
-                 ShOpLeXUG
+                 BerNie's
 
               </p>
 

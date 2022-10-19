@@ -13,7 +13,6 @@
 include 'database.php';
 
  $search = "";
- $queryid =  mysqli_real_escape_string($conn,$_GET["queryid"]);
 
  $errors = array();
 
@@ -44,11 +43,6 @@ if(empty($search)){
   array_push($errors,"please enter search content");
 
 }
-if(empty($queryid)){
-
-  array_push($errors,"INVALID ID");
-
-}
 
 if(count($errors) == 0){
 
@@ -56,7 +50,7 @@ if(count($errors) == 0){
 
 
 
-  $query = "SELECT * FROM products WHERE productname LIKE '%$search%' or category LIKE '%$queryid%' OR description LIKE '%$search%'
+  $query = "SELECT * FROM products WHERE productname LIKE '%$search%' or category LIKE '%$search%' OR description LIKE '%$search%'
 
   OR productname LIKE '%$search%'  OR comment LIKE '%$search%' OR location LIKE '%$search%' OR price LIKE '%$search%'";
 
@@ -64,7 +58,13 @@ if(count($errors) == 0){
 
   $results = mysqli_num_rows($res);
 
+
+
+
+
   if(  $results > 0){
+
+
 
   while ($row  = mysqli_fetch_assoc($res)) {
 

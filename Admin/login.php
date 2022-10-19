@@ -75,7 +75,7 @@ array_push($errors,"Incorrect Email or Password!!!");
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>ShOpLeXUG </title>
+    <title>BerNie's </title>
 
     <meta name="description" content="" />
 
@@ -179,11 +179,11 @@ array_push($errors,"Incorrect Email or Password!!!");
                       </g>
                     </svg>
                   </span>
-                  <span class="app-brand-text demo text-body fw-bolder">ShOpLeXUG</span>
+                  <span class="app-brand-text demo text-body fw-bolder">BerNie's</span>
                 </a>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2">Welcome to ShOpLeXUG 👋</h4>
+              <h4 class="mb-2">Welcome to BerNie's 👋</h4>
               <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
               <form class="mb-3"  method="POST">

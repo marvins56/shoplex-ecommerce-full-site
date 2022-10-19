@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ShOpLeXUG</title>
+    <title>BerNie's</title>
     <meta name="keywords" content="HTML5 Template">
     <meta name="description" content="Molla - Bootstrap eCommerce Template">
     <meta name="author" content="p-themes">
@@ -119,7 +119,7 @@ server error!!
                 </div><!-- End .col-md-9 col-lg-8 -->
             </div><!-- End .row -->
         </div><!-- End .container -->
-        <?php echo '<div class="soon-bg bg-image" style="background-image: url('.$locationdeal.')"></div>' ?>
+        <?php echo '<div class="soon-bg bg-image" style="background-image: url(Admin/'.$locationdeal.')"></div>' ?>
         <!-- End .soon-bg bg-image -->
     </div><!-- End .soon -->
     <!-- Plugins JS File -->

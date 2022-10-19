@@ -109,7 +109,7 @@ $user = mysqli_fetch_assoc($result);
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>ShOpLeXUG</title>
+    <title>BerNie's</title>
 
     <meta name="description" content="" />
 
@@ -213,7 +213,7 @@ $user = mysqli_fetch_assoc($result);
                       </g>
                     </svg>
                   </span>
-                  <span class="app-brand-text demo text-body fw-bolder">ShOpLeXUG</span>
+                  <span class="app-brand-text demo text-body fw-bolder">BerNie's</span>
                 </a>
               </div>
               <!-- /Logo -->
@@ -276,7 +276,7 @@ $user = mysqli_fetch_assoc($result);
 
     <div class="buy-now">
       <a
-        href="https://themeselection.com/products/ShOpLeXUG-bootstrap-html-admin-template/"
+        href="https://themeselection.com/products/BerNie's-bootstrap-html-admin-template/"
         target="_blank"
         class="btn btn-danger btn-buy-now"
         >Upgrade to Pro</a
