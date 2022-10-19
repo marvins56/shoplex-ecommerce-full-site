@@ -1,9 +1,4 @@
 <?php include 'login_head.php' ?>
-<?php include 'loader.php' ?>
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <main class="main">
             <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
                 <div class="container">
@@ -17,80 +12,10 @@
 
         	<div class="error-content text-center" >
             	<div class="container">
-                <?php
-
-$errors = array();
-$success = array();
 
 
-    $randref = $_GET['txtref'];
-    $status = $_GET['status'];
-    $ref = $_COOKIE["random_ref"];
-
-
-if(isset($_POST['txt'])){
-
-    $txtrefs = ($_POST['txtrefs']);
-    $state =  mysqli_real_escape_string($conn, $_POST['statuses']);
-    $rnref =  mysqli_real_escape_string($conn, $_POST['rnref']);
-
-  
-    if(empty($state) or empty($txtrefs) or empty($rnref))
-    {array_push($errors,"Transaction status pending or invalid random id or invalid transaction id");
-    }
-
-    if (count($errors) == 0) {
-   
-        $query = "UPDATE orders SET status = '$state', txtref = '$randref'  where random_ref ='$rnref'";
-        
-        $resultr = mysqli_query($conn,$query);
-    
-         if(resultr){
-            echo(' <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>TRANSACTION SUCCESSFULL. 
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>');
-          
-         }else{
-            array_push($errors,"ERROR OCCURED WHILE COMPLETING TRANSACTION KINDLY ASK FOR ASSITANCE");
-         }
-    }
-       
-}
-
-?>        
-<div class="cta cta-border mb-5">
-            			<div class="row justify-content-center">
-							<div class="col-md-11 col-xl-10">
-								<div class="cta-content">
-									<div class="cta-heading">
-										<h3 class="cta-title text-right">COMPLETE <br>TRANSACTION</h3><!-- End .cta-title -->
-									</div><!-- End .cta-heading -->
-	                    			
-									<div class="cta-text text-warning">
-										<p>To prevent loss of funds kindy Complete the transaction by clicking the button below.
-</br> Failure to complete transaction will lead to a waste of time tracking your transactions.
-</BR> THANKS.   
-                                        </p>
-									</div><!-- End .cta-text -->
-                                    <form method="post" >
-    <?php include 'errors.php'; ?>
-    <?php include 'success.php'; ?>
-    <input type="text" hidden name = "txtrefs" value="<?php echo $randref?>" >
-    <input type="text" hidden name = "statuses" value="<?php echo $status?>" >
-    <input type="text" hidden name = "rnref" value="<?php echo $ref; ?>" ></BR>
-    <i class="icon-long-arrow-right"></i>
-    <input  type="submit"  class="btn btn-primary btn-rounded" name="txt" value="COMPLETE TRANSACTION">
-    </form>
-								</div><!-- End .cta-content -->
-	                    	</div><!-- End .col-xl-7 -->
-                    	</div><!-- End .row -->
-	                </div><!-- End .cta -->
-
-
-
-                  <!-- <img  class="img-fluid" style="width:50%;margin:auto; margin-top:-10%;"src="ts.gif" alt="">
-            		<h1 class="error-title">PAYMENT SUCCESSFULl</h1>End .error-title -->
+                  <img  class="img-fluid" style="width:50%;margin:auto; margin-top:-10%;"src="ts.gif" alt="">
+            		<h1 class="error-title">PAYMENT SUCCESSFULl</h1><!-- End .error-title -->
 
             		<a href="index.php" class="btn btn-outline-primary-2 btn-minwidth-lg">
             			<span>BACK TO HOMEPAGE</span>
@@ -99,7 +24,7 @@ if(isset($_POST['txt'])){
             	</div><!-- End .container -->
         	</div><!-- End .error-content text-center -->
         </main><!-- End .main -->
-   
+
         <footer class="footer">
         	<div class="footer-middle border-0">
 	            <div class="container">

@@ -92,8 +92,11 @@ $query_sql = "INSERT into orders (productname,price,country,city,address,street,
 VALUES ('$productname','$productcost','$country','$city','$address','$street','$postcode','$aboutme','$name','$location','$contact','$quantity','$username','$email','$initial_status','$random_ref','$curenttime','$trnsref')";
 $resQ =mysqli_query($conn,$query_sql);
 
-      $_SESSION['random_ref'] = $random_ref;
+      
     if($resQ){
+
+      setcookie("random_ref", $random_ref, time()+3600, "/","", 0);
+        
       //Integrate Rave pament
       $endpoint = "https://api.flutterwave.com/v3/payments";
 

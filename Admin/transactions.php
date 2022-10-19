@@ -16,6 +16,7 @@
                         <th>QTY</th>
                         <th>PAYMENT STATUS</th>
                         <th>DATE</th>
+                        <th>TXT_REF</th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
@@ -41,6 +42,7 @@
                 $status = $row['status'];
                 $street= $row['street'];
                 $contact = $row['contact'];
+                $txtref = $row['txtref'];
 if($status == "successful"){
   $status = '<span class="badge bg-label-success me-1">SUCECSSFUL</span></td>';
 }else{
@@ -67,6 +69,10 @@ if($status == "successful"){
                 </td>
                 <td>
                 '.$dop.'
+              
+                </td>
+                <td>
+                '.$txtref.'
               
                 </td>
               </tr>

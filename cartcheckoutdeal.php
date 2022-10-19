@@ -77,20 +77,21 @@ if(isset($_POST['qty'])){
 
 
 // payment processing********************************
-
 $productcost = $quantity * $price;
 //**********************************
 $random_ref = rand();
 $initial_status = "pending";
+$trnsref = "null";
 
 $curenttime = date('d-m-y h:i:s');
-$query_sql = "INSERT into orders (productname,price,country,city,address,street,postcode,aboutme,name,location,contact,quantity,username,email,status,random_ref,time)
-VALUES ('$productname','$productcost','$country','$city','$address','$street','$postcode','$aboutme','$name','$location','$contact','$quantity','$username','$email','$initial_status','$random_ref','$curenttime ')";
+$query_sql = "INSERT into orders (productname,price,country,city,address,street,postcode,aboutme,name,location,contact,quantity,username,email,status,random_ref,time,txtref)
+VALUES ('$productname','$productcost','$country','$city','$address','$street','$postcode','$aboutme','$name','$location','$contact','$quantity','$username','$email','$initial_status','$random_ref','$curenttime','$trnsref')";
 $resQ =mysqli_query($conn,$query_sql);
 
       
     if($resQ){
-      $_SESSION['random_ref'] = $random_ref;
+
+      setcookie("random_ref", $random_ref, time()+3600, "/","", 0);
       //Integrate Rave pament
       $endpoint = "https://api.flutterwave.com/v3/payments";
 

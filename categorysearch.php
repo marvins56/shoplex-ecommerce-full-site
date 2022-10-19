@@ -12,14 +12,12 @@
 
 include 'database.php';
 
- $search = "";
- $queryid =  mysqli_real_escape_string($conn,$_GET["queryid"]);
+
+$queryid = $_GET["queryid"];
 
  $errors = array();
 
 ?>
-
-
 
   <div class="container for-you">
 
@@ -27,44 +25,16 @@ include 'database.php';
 
       <div class="row justify-content-center">
 
-
-
         <?php
+        if(!empty($queryid)){
 
-
-
-        if(isset($_POST['search'])){
-
-
-
-$search = mysqli_real_escape_string($conn,$_POST['search']);
-
-if(empty($search)){
-
-  array_push($errors,"please enter search content");
-
-}
-if(empty($queryid)){
-
-  array_push($errors,"INVALID ID");
-
-}
-
-if(count($errors) == 0){
-
-
-
-
-
-  $query = "SELECT * FROM products WHERE productname LIKE '%$search%' or category LIKE '%$queryid%' OR description LIKE '%$search%'
-
-  OR productname LIKE '%$search%'  OR comment LIKE '%$search%' OR location LIKE '%$search%' OR price LIKE '%$search%'";
+  $query = "SELECT * FROM products WHERE category ='$queryid'";
 
   $res = mysqli_query($conn,$query);
 
   $results = mysqli_num_rows($res);
 
-  if(  $results > 0){
+  if($results > 0){
 
   while ($row  = mysqli_fetch_assoc($res)) {
 
@@ -234,7 +204,7 @@ if(count($errors) == 0){
 
   }
 
-}
+
 
 }
 

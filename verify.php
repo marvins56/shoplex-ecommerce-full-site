@@ -10,6 +10,8 @@ if(isset($_GET["transaction_id"]) AND isset($_GET["status"])  AND isset($_GET["t
 
     $trans_ref = htmlspecialchars($_GET['tx_ref']);
 
+
+
     //Verify Endpoint
 
     $url = "https://api.flutterwave.com/v3/transactions/".$trans_id."/verify";
@@ -93,59 +95,28 @@ if(isset($_GET["transaction_id"]) AND isset($_GET["status"])  AND isset($_GET["t
 
   $phone =  $result->data->customer->phone_number;
 
+  $errors = array();
   
   if(($status != $trans_status) OR ($trans_id != $id)){
-
-    $randrefs = (int)$_SESSION['random_ref'];
-    $query = "UPDATE orders SET status = '$status'  where random_ref ='$randrefs'";
-    
-    $resultr = mysqli_query($conn,$query);
-   
-    if($resultr){
-     header("Location: paymentfailed.php");
-    }
+      header("Location: paymentfailed.php?txtref=$reference&status=$status");    
     exit;
-  }
-  
-  else if(($status == "cancelled")){
 
-    $randrefs = (int)$_SESSION['random_ref'];
-    $query = "UPDATE orders SET status = '$status'  where random_ref ='$randrefs'";
-    $resultr = mysqli_query($conn,$query);
-    
-    if($resultr){
-     header("Location: paymentfailed.php");
-    }
+  }else  if(($status == "cancelled")){
+    header("Location: paymentfailed.php?txtref=$reference&status=$status");   
+    exit;
+
+  }else  if(($status == "successful")){
+      header("Location: paymentsuccess.php?txtref=$reference&status=$status");   
+
     exit;
 
   }
-
-    
-  else if(($status == "successfull")){
-
-    $randrefs = (int)$_SESSION['random_ref'];
-    $query = "UPDATE orders SET status = '$status'  where random_ref ='$randrefs'";
-    $resultr = mysqli_query($conn,$query);
-    
-    if($resultr){
-     header("Location: paymentfailed.php");
-    }
-    exit;
-
-  }
-  
   else{
  
-    $randref = $_SESSION['random_ref'];
-    $query = "UPDATE orders SET status = '$status'  where random_ref ='$randref'";
-    
-    $resultr = mysqli_query($conn,$query);
-    
-    if($resultr){
-        header("Location: paymentsuccess.php");   
-    }
-    exit;
+      header("Location: paymentsuccess.php?txtref=$reference&status=$status");       
+    exit; 
   }
+
 
   curl_close($curl);
 
