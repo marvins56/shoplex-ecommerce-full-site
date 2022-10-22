@@ -23,9 +23,10 @@
 
                   <div class="widget-call">
                     <i class="icon-phone"></i>
-                    Got Question? Call us 24/7
-                    <a href="tel:#">+256 784 292153</a>
-                        <a href="tel:#">+256 759143703</a>
+                    Got Question? Call us 24/7</br>
+                    <a href="tel:#">+256 705318546</a></br>
+                        <a href="tel:#">+256 785889939</a></br>
+                        <a href="tel:#">+256 773603206</a>
                   </div>
                   <!-- End .widget-call -->
                 </div>

@@ -78,7 +78,6 @@ array_push($errors,"Incorrect Email or Password!!!");
     <title>BerNie's </title>
 
     <meta name="description" content="" />
-
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
 

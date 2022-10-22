@@ -123,7 +123,7 @@ echo '<div class="alert alert-success" role="alert">
                  </div><!-- End .container -->
              </nav><!-- End .breadcrumb-nav -->
 
-             <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17" style="background-image: url('assets/images/backgrounds/login-bg.jpg')">
+             <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17" style="background-image: url('https://p0.piqsels.com/preview/344/141/318/bar-liquor-bottles-beverages.jpg')">
              	<div class="container">
              		<div class="form-box">
              			<div class="form-tab">

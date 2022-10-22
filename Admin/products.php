@@ -1,4 +1,8 @@
-<?php include ('auth_header.php'); ?>
+<?php include ('auth_header.php'); 
+
+
+?>
+
 <div class="content-wrapper">
     
             <div class="container-xxl flex-grow-1 container-p-y">
@@ -14,11 +18,13 @@
                         <th>PRICE</th>
                         <th>CATEGORY</th>
                         <th>ACTION</th>
+                         
+<th><a href="all_products.php">View all</a></th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
                     <?php
-          $query = "select * from products";
+          $query = "select * from products limit 5";
           $result = mysqli_query($conn,$query);
           if($result){
             if(mysqli_num_rows($result)> 0){
@@ -65,6 +71,7 @@
                 ?>
 
                     </tbody>
+
                   </table>
                 </div>
               </div>
@@ -82,11 +89,14 @@
                         <th>PRICE</th>
                         <th>CATEGORY</th>
                         <th>ACTION</th>
+<th>                        <a href="all_deals.php" >View all</a>
+          </th>
+                       
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
                     <?php
-          $query = "select * from deals";
+          $query = "select * from deals limit 5";
           $result = mysqli_query($conn,$query);
 
           if($result){
@@ -139,8 +149,8 @@
 
 
                      
-                   
                     </tbody>
+
                   </table>
                 </div>
               </div>
